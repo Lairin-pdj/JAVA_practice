@@ -1,7 +1,6 @@
-package com.company;
 import java.util.Scanner;
 
-public class Main {
+public class Balance {
     static int balance = 0;
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -20,12 +19,12 @@ public class Main {
             try{
                 i = sc.nextInt();
                 if(i < 0 || i > 4){
-                    System.out.println("범위 밖의 숫자입니다.");
+                    System.out.println("out of range.");
                     continue;
                 }
             }
             catch(Exception e){
-                System.out.println("숫자를 입력해 주세요.");
+                System.out.println("is not a number.");
                 sc.next();
                 continue;
             }
@@ -40,34 +39,34 @@ public class Main {
                         System.out.print("INPUT : ");
                         num = sc.nextInt();
                         if(num < 0){
-                            System.out.println("음수는 넣을 수 없습니다.");
+                            System.out.println("can't put negative.");
                             break;
                         }
                     }
                     catch(Exception e){
-                        System.out.println("숫자가 아닙니다.");
+                        System.out.println("is not a number.");
                         sc.next();
                         break;
                     }
                     temp = inputBalance(num);
-                    System.out.println(temp + "만큼 추가되었습니다.");
+                    System.out.println("add " + temp);
                     break;
                 case 3:
                     try{
                         System.out.print("OUTPUT : ");
                         num = sc.nextInt();
                         if(num > checkBalance()){
-                            System.out.println("허용 출력을 넘었습니다.");
+                            System.out.println("out of range.");
                             break;
                         }
                     }
                     catch(Exception e){
-                        System.out.println("숫자가 아닙니다.");
+                        System.out.println("is not a number.");
                         sc.next();
                         break;
                     }
                     temp = outputBalance(num);
-                    System.out.println(temp + "만큼 차감되었습니다.");
+                    System.out.println("temp);
                     break;
                 case 4:
                     check = false;
